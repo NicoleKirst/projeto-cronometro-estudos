@@ -4,7 +4,7 @@ class Form extends React.Component {
     render() {
         return (
             <form 
-                className='mt-6 flex flex-col content-center justify-center items-center gap-4  bg-gray-500 w-96 h-96 rounded-lg'>
+                className='mt-6 flex flex-col content-center justify-center items-center gap-4  bg-gray-500 w-96 h-72 rounded-lg'>
                 <div>
                     <label 
                         htmlFor="tarefa" 
