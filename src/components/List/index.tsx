@@ -1,20 +1,10 @@
-import React, { useState } from 'react';
+import { Itarefa } from '../../types/tarefa';
 import Item from './Item';
 
-function List() {
-    const [tarefas, setTarefas] = useState([{
-        tarefa: 'React',
-        tempo: '02:00:00'
-    }, {
-        tarefa: 'Javascript',
-        tempo: '01:00:00'
-    }]);
+function List({tarefas}:{tarefas: Itarefa[]}) {
     return(
         <aside className='w-96 h-96'>
-            <h2 onClick={() => {
-                setTarefas([...tarefas,{ tarefa: "Estudar", tempo:"00:02:50"}])
-            }}
-                className='text-white text-xl font-medium mt-4'>Cards de Estudos:</h2>
+            <h2 className='text-white text-xl font-medium mt-4'>Cards de Estudos:</h2>
                 
             <ul>
                 {tarefas.map((item, index) => (
