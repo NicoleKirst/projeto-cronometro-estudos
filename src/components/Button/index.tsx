@@ -1,12 +1,17 @@
 import React from "react";
 
 // forma antiga de escrever com class, a nova forma é com function
-class Button extends React.Component<{ text: string ,  type?: "button" | "submit" | "reset" | undefined}>
+class Button extends React.Component<{ 
+    text: string ,  
+    type?: "button" | "submit" | "reset" | undefined
+    onClick?: () => void 
+    }>
 {
     render() {
-        const {type = "button"} = this.props;
+        const {type = "button", onClick} = this.props;
         return (
             <button 
+                onClick={onClick}
                 type={type}
                 className="text-lg font-medium bg-slate-400 border border-slate-500 rounded-md p-2 drop-shadow-xl"
             > {this.props.text}

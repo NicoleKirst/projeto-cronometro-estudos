@@ -16,7 +16,7 @@ export default function Item(
     }: Props) {
     return (
         <li  
-            onClick={() => selecionaTarefa(
+            onClick={() => !completado && selecionaTarefa(
             {
                 tarefa,
                 tempo,
@@ -25,10 +25,13 @@ export default function Item(
                 id
             })}
             className={`${selecionado ? 
-            'bg-blue-500 flex flex-col justify-center content-center pl-4 text-slate-300 text-md h-16 w-96 rounded-lg mt-4': 
-            'flex flex-col justify-center content-center pl-4 text-slate-300 text-md h-16 w-96 bg-slate-700 rounded-lg mt-4'}`}>
+            'bg-green-700 flex flex-col justify-center content-center pl-4 text-slate-300 text-md h-16 w-96 rounded-lg mt-4': 
+             completado ? 'bg-green-900 flex flex-col justify-center content-center pl-4 text-slate-300 text-md h-16 w-96 rounded-lg mt-4': 
+            'flex flex-col justify-center content-center pl-4 text-slate-300 text-md h-16 w-96 bg-slate-700 rounded-lg mt-4' } 
+            `}>
             <h3> {tarefa} </h3>
             <span> {tempo} </span>
+            {completado && <span aria-label="tarefa completada"></span>}
         </li>
     )
 }
