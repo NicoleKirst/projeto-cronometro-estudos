@@ -29,7 +29,7 @@ class Form extends React.Component<{
     render() {
         return (
             <form onSubmit={this.adicionarTarefa.bind(this)}
-                className='mt-6 flex flex-col content-center justify-center items-center gap-4  bg-gray-500 w-96 h-72 rounded-lg'>
+                className='bg-slate-500 mt-6 flex flex-col content-center justify-center items-center gap-4 w-96 h-72 rounded-lg'>
                 <div>
                     <label 
                         htmlFor="tarefa" 

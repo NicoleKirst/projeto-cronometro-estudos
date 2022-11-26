@@ -9,7 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(14, 15, 48);
+  background-color: rgb(6, 16, 45);
+  /* background-image: url("https://img.freepik.com/vetores-gratis/onda-digital-abstrata-de-fundo-de-particulas_1409-1276.jpg?w=1060&t=st=1669247066~exp=1669247666~hmac=1eb6d102050f3e6463ac6b84c4c0c9fb5fd9ab8a9c820bc067f23addf9b1c69b");
+  background-size: cover; */
 }
 
 code {

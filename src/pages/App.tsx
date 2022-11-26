@@ -6,7 +6,17 @@ import { Itarefa } from '../types/tarefa';
 
 function App() {
 const [tarefas, setTarefas] = useState<Itarefa[]>([]);
-  return (
+const [selecionado, setSelecionado] = useState<Itarefa>();
+
+function selecionaTarefa(tarefaSelecionada: Itarefa) {
+  setSelecionado(tarefaSelecionada);
+  setTarefas(tarefasAnteriores => tarefasAnteriores.map(tarefa => ({
+    ...tarefa,
+    selecionado: tarefa.id === tarefaSelecionada.id ? true : false
+  })))
+}
+
+return (
     <div className="App">
       <div 
         className='flex items-start gap-10 content-center justify-center'
@@ -14,9 +24,12 @@ const [tarefas, setTarefas] = useState<Itarefa[]>([]);
       <div 
         className='flex flex-col items-center gap-4 content-center justify-center'>
         <Form setTarefas={setTarefas}/>
-        <Stopwatch />
+        <Stopwatch selecionado={selecionado}/>
       </div>
-        <List tarefas={tarefas}/>
+        <List 
+          tarefas={tarefas}
+          selecionaTarefa={selecionaTarefa}
+        />
       </div>
     </div>
   );
