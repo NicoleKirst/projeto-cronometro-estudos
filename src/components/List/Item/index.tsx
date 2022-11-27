@@ -4,7 +4,6 @@ interface Props extends Itarefa {
     selecionaTarefa: (tarefaSelecionada: Itarefa) => void
 }
 
-
 export default function Item(
     {
         tarefa,
